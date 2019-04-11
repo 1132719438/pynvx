@@ -9,7 +9,8 @@
 ```
 
 
-# Pynvx
+# pynvx
+
 > Python bindings for NVIDIA CUDA APIs.
 
 [![PyPI](https://img.shields.io/pypi/v/pynvx.svg)](https://pypi.python.org/pypi/pynvx)
@@ -19,9 +20,9 @@
 
 A Python interface to get GPU information, built with [pybind11](https://github.com/pybind/pybind11). The main purpose of this project is providing a solution for managing GPU information on OS X, because there is no NVML library on OS X.
 
-You can use pynvx in two mode:
+You can use pynvx as:
 - standalone API: `pynvx.cuda*`
-- pynvml wrapper: `pynvml.nvml*`, API call will be invoked to pynvml on Linux and Windows, or pynvx on OS X.
+- pyNVML wrapper: `pynvml.nvml*`, API call will be invoked to pyNVML on Linux and Windows, or pynvx on OS X.
 
 
 ## Table of Contents
@@ -34,6 +35,7 @@ You can use pynvx in two mode:
 - [Troubleshooting](#troubleshooting)
 - [Test & Example](#test--example)
 - [Special Thanks](#special-thanks)
+
 
 ## Prerequisites
 
@@ -74,6 +76,10 @@ pip install pynvx-*.whl
 
 ### 3. Install from source
 
+> Please install CUDA and set environment variables first.
+
+> See `FindCUDA.cmake:548 (message): Specify CUDA_TOOLKIT_ROOT_DIR` in [TROUBLESHOOTING](https://github.com/1132719438/pynvx/blob/master/TROUBLESHOOTING.md).
+
 Just clone this repository and pip install. Note the `--recursive` option which is
 needed for the pybind11 submodule:
 
@@ -92,13 +98,13 @@ invoke CMake and build the pybind11 module as specified in `CMakeLists.txt`.
 
   See [API](https://github.com/1132719438/pynvx/blob/master/API.md)
 
-- pynvml wrapper
+- pyNVML wrapper
 
-  Please install **pynvml** when use pynvx as pynvml wrapper:  
+  Please install **pyNVML** when use pynvx as pyNVML wrapper:  
   Python 3: `pip install nvidia-ml-py3`  
   Python 2: `pip install nvidia-ml-py`
 
-  see [WRAPPER](https://github.com/1132719438/pynvx/blob/master/WRAPPER.md)
+  See [WRAPPER](https://github.com/1132719438/pynvx/blob/master/WRAPPER.md)
 
 
 ## Special notes for Windows
@@ -120,33 +126,32 @@ requirement for you package: see the `conda.recipe/meta.yaml` file in this examp
 
 ## License
 
-### Pybind11
+`pynvx` is provided under MIT License, see [LICENSE](https://github.com/1132719438/pynvx/blob/master/LICENSE) file.
 
-Pybind11 is provided under a BSD-style license that can be found in the LICENSE file in [pybind11](https://github.com/pybind/pybind11). By using, distributing, or contributing to this project, you agree to the
-terms and conditions of this license.
-
-### Pynvx
-
-Pynvx is provided under MIT License, see [LICENSE](https://github.com/1132719438/pynvx/blob/master/LICENSE) file.
 
 ## Troubleshooting
 
-If you have problem while installing Pynvx, see [TROUBLESHOOTING](https://github.com/1132719438/pynvx/blob/master/TROUBLESHOOTING.md) before opening an issue.
+If you have problem while installing pynvx, see [TROUBLESHOOTING](https://github.com/1132719438/pynvx/blob/master/TROUBLESHOOTING.md) before opening an issue.
+
 
 ## Test & Example
 
-- test case  
+- test cases
+
   [test.py](https://github.com/1132719438/pynvx/blob/master/tests/test.py)
 
-- standalone API example  
+- standalone API example
+
   [info.py](https://github.com/1132719438/pynvx/blob/master/tests/info.py)
 
-- pynvml wrapper API example  
+- pyNVML wrapper example
+
   [wrapper.py](https://github.com/1132719438/pynvx/blob/master/tests/wrapper.py)
 
 
 ## Special Thanks
-- Thanks [stas00](https://github.com/stas00) for the idea of pynvml wrapper and helping to test.
+
+- Thanks [stas00](https://github.com/stas00) for the idea of pyNVML wrapper and helping to test.
 
 
 [FAQ]: http://pybind11.rtfd.io/en/latest/faq.html#working-with-ancient-visual-studio-2009-builds-on-windows

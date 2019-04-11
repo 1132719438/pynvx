@@ -1,4 +1,4 @@
-Pynvx
+pynvx
 =====
 
     Python bindings for NVIDIA CUDA APIs.
